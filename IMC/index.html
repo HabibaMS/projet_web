@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul IMC</title>
+    <link  rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="entete">
+        
+        <span class="logo"> Ma première calculatrice d'IMC</span>
+    </header>
+
+    <main>
+        <h1> Comment calculer l'IMC</h1>
+        
+        <p> La formule de calcul :
+            L'IMC se calcule avec la formule suivante : 
+            IMC =Poids (en kg) / Taille(en cm)** 2
+            Exemple : Pour une personne pesant 70 kg et mesurant 1,75 m :
+                1,75 * 1,75 = 30.625
+                70 ÷ 30,625 ≈ 22,9
+        </p>
+
+        <p> Classification des résultats (Normes de l'OMS)
+                Moins de 18,5 : Insuffisance pondérale (poids insuffisant)
+                18,5 à 24,9 : Poids normal (poids santé)
+                25,0 à 29,9 : Surpoids (léger excès de poids)
+                30,0 à 34,9 : Obésité modérée (classe I)
+                35,0 à 39,9 : Obésité sévère (classe II)
+                40,0 et plus : Obésité massive / morbide (classe III)
+        </p>
+
+        <p> Limites de l'IMC
+            L'IMC est un indicateur de dépistage pratique, mais il ne mesure pas directement la masse grasse et ne s'applique pas à tout le monde. Il est déconseillé ou moins fiable pour : [1, 2, 3]
+            - Les enfants et les adolescents
+            - Les femmes enceintes ou allaitantes
+            - Les athlètes ou les personnes ayant une forte masse musculaire
+            - Les personnes de plus de 65 ans.
+        </p>
+
+    <form   id="formulaire">
+
+        <fieldset>
+            <legend> Calcul de votre IMC </legend>
+
+            <p> choisissez vos unités de mesure : </p>
+
+            <div class="unites">
+                <label> <input type="radio" name= "unite" value="metrique" checked> kg/m </label>
+                <label> <input type="radio" name= "unite" value= "imperial"> Lb/Pieds </label>
+            </div>
+
+            <div class="ligne">
+                <label for="poids"> Poids : </label>
+                <input type="number" id="poids" min="1" step="0.1" required> 
+                <span id="unitePoids">kg</span>
+            </div>
+
+            <div class="ligne">
+                <label for="taille1">Taille :</label>
+                <input type="number" id="taille1" min="0" step="1" required>
+                <span id="uniteTaille1"> m</span>
+                <input type="number" id="taille2" min="0" step="1" required>
+                <span id="uniteTaille2"> cm</span>
+            </div>
+            
+            <button type="submit"> calculer</button>
+
+            <h2> Résultat </h2>
+            <div class="ligne">
+                <label for="imc"> Votre IMC est de : </label>
+                <input type="text" id="imc" readonly>
+            </div>
+
+            <p id="categorie"></p>
+
+        </fieldset>
+    </form>
+
+    <section id="ressources">
+        <h2> Un challenge à réaliser dans le futur </h2>
+        <p> 
+        <a href=" https://www.apollohospitals.com/fr/health-calculators/bmi-calculator" target="_blank" rel="noopener noreferrer">
+            Un site bien complet pour le calcul de l'IMC et des plusieurs outils en santé
+                 </a>
+        </p>
+    </section>
+    </main>
+    <script src="script.js" defer></script>
+    <footer id="piedPage">
+        <span class="logo"> à améliorer </span>
+    </footer>
+</body>
+</html>
